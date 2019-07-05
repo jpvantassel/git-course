@@ -1,7 +1,7 @@
 # Git Basics
 > Joseph Vantassel, The University of Texas at Austin<br>
 
-[![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://raw.githubusercontent.com/jpvantassel/git-course/master/License.md)
+[![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/Licence.md)
 
 __Sources:__<br>
 >[Git Tutorial from Code Academy](https://www.codecademy.com/learn/learn-git)<br>
@@ -17,7 +17,7 @@ git config --global user.email jd@mail.com  # Set up configuration with email
 git config --list                           # Confirm and view changes
 ```
 
-Need help?
+### Need help?
 ```bash
 git help <verb>
 git <verb> --help
