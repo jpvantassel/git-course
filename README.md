@@ -1,7 +1,10 @@
 # Git Basics
-Joseph Vantassel, The University of Texas at Austin<br><br>
+> Joseph Vantassel, The University of Texas at Austin<br>
+
+[![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://raw.githubusercontent.com/jpvantassel/git-course/master/License.md)
+
 __Sources:__<br>
-[Git Tutorial from Code Academy](https://www.codecademy.com/learn/learn-git)<br>
+>[Git Tutorial from Code Academy](https://www.codecademy.com/learn/learn-git)<br>
 [Git Tutorial for Beginners: Command-Line Fundementals](https://www.youtube.com/watch?v=HVsySz-h9r4&t=292s)<br>
 [Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits](https://www.youtube.com/watch?v=FdZecVxzJbk&t=56s)<br>
 [Why is Git always asking for my password?](https://help.github.com/en/articles/why-is-git-always-asking-for-my-password)
