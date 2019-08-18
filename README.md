@@ -8,6 +8,8 @@ __Sources:__<br>
 [Git Tutorial for Beginners: Command-Line Fundementals](https://www.youtube.com/watch?v=HVsySz-h9r4&t=292s)<br>
 [Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits](https://www.youtube.com/watch?v=FdZecVxzJbk&t=56s)<br>
 [Why is Git always asking for my password?](https://help.github.com/en/articles/why-is-git-always-asking-for-my-password)
+[Committed a Large File by Accident?](https://thomas-cokelaer.info/blog/2018/02/git-how-to-remove-a-big-file-wrongly-committed/)
+
 
 ### Setup/Configuration
 ```bash
@@ -258,4 +260,38 @@ Your Repo > Settings > Repository name
 Links to the previous name of your repository will be forwarded to your new repository. However, for clarity its recommend that you update your links by:
 ```bash
 git remote set-url origin <newurl>
+```
+
+### Commited a Large File by Accident
+If you accidentally committed a large file to your git history, but are now
+having an issue pushing your commit due to Github's maximum file size of 100MB.
+
+When you push you will see an error like this:
+```bash
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+remote: error: Trace: b310dac0473fe3f34910f9b68bd885fd
+remote: error: See http://git.io/iEPt8g for more information.
+remote: error: File path/to/your/file is 427.54 MB; this exceeds GitHubs file size limit of 100.00 MB
+To github.com:username/repository.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to git@github.com:username/repository.git
+```
+Note that if you add this file to .gitignore and try committing this will not
+solve your problem as the issue is with your very first commit (the one before
+you realized you have that large file).
+
+To fix this issue you need to not only .gitignore the large file, but also purge
+this file from your commit history so you can push your work and be up to update
+on your remote. You do this by going back in your tree and forcefully removing
+the file.
+```bash
+git filter-branch --tree-filter 'rm -rf path/to/your/large/file' HEAD
+```
+
+If you need to do this for more than one file, you will need to add a -f, to
+tell github to force overwrite the backup it made when you performed the previous
+filter and removal, like this:
+
+```bash
+git filter-branch -f --tree-filter 'rm -rf path/to/your/other/large/file' HEAD
 ```
