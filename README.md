@@ -1,17 +1,11 @@
 # Git Basics
-> Joseph Vantassel, The University of Texas at Austin<br>
+
+> Joseph Vantassel, The University of Texas at Austin
 
 [![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/Licence.md)
 
-__Sources:__<br>
->[Git Tutorial from Code Academy](https://www.codecademy.com/learn/learn-git)<br>
-[Git Tutorial for Beginners: Command-Line Fundementals](https://www.youtube.com/watch?v=HVsySz-h9r4&t=292s)<br>
-[Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits](https://www.youtube.com/watch?v=FdZecVxzJbk&t=56s)<br>
-[Why is Git always asking for my password?](https://help.github.com/en/articles/why-is-git-always-asking-for-my-password)
-[Committed a Large File by Accident?](https://thomas-cokelaer.info/blog/2018/02/git-how-to-remove-a-big-file-wrongly-committed/)
+## Setup/Configuration
 
-
-### Setup/Configuration
 ```bash
 git --version                               # Determine version number
 git config --global user.name John Doe      # Set up configuration with name
@@ -19,7 +13,8 @@ git config --global user.email jd@mail.com  # Set up configuration with email
 git config --list                           # Confirm and view changes
 ```
 
-### Need help?
+## Need help
+
 ```bash
 git help <verb>
 git <verb> --help
@@ -28,31 +23,40 @@ git help config
 git config --help
 ```
 
-### Local Repositories
+## Local Repositories
+
 ```bash
 cd <myprojectdirectory>         # Move to project directory you want to track
 ls -la                          # List files in directory
 git init                        # Initialize git directory
 ls -la                          # List files in directory -> Note .git folder!
 ```
+
 What's going on at this point
+
 ```bash
 git status                      # Shows what is and is not being tracked
 ```
+
 What if we have a file(s) that we dont want to track. Use __.gitignore__
+
 ```bash
 ls -la                          # List files in directory
 touch .gitignore                # This creates a .gitignore file for us
 ls -la                          # List files in directory -> Note .gitignore file!
 ```
-But how does it know what we want to ignore. <br>
-For that, we need to edit the file. Since its just a text file edit any way you wish (e.g. vim, emacs, nano). <br>
+
+But how does it know what we want to ignore.
+For that, we need to edit the file. Since its just a text file edit any way you wish (e.g. vim, emacs, nano).
+
 ```bash
 vim .gitignore                  # Use vim to open the file
 BoringStuff.xlsx                # Ignore MS Excel file called BoringStuff
 *.txt                           # Ignore all .txt files
 ```
+
 Now that we have excluded the junk. Lets tell git to add the rest to the staging area
+
 ```bash
 git status                      # Current state of our directory
 git add -A                      # -A add everything (that isn't "gitignored")
@@ -64,6 +68,7 @@ git status                      # Git shows us what changes are ready to be comm
 ```
 
 Added file to staging area by accident?
+
 ```bash
 git status                      # Current state
 git reset BadFile.py            # Remove BadFile.py from the staging area
@@ -75,6 +80,7 @@ git status                      # Confirm this worked
 ```
 
 Commit files from the staging area.
+
 ```bash
 git status                      # Get a baseline
 git commit -m "Initial commit"  # Lets commit, -m is to give it a message, always do this!
@@ -82,37 +88,51 @@ git status                      # Check our staging area
 git log                         # Now we can see our commit along with its message
 ```
 
-### Remote Repositories
-Say we found a project on a remote (e.g., github) that we would like to contribute to.<br>
+## Remote Repositories
+
+Say we found a project on a remote (e.g., github) that we would like to contribute to.
+
 Copy the remote to local repo.
+
 ```bash
 git clone <url-source> <local-destination>   # Get url-source from repo repo
 #OR
 git clone <local-source> <local-destination> # It is rarely needed but you can setup a remote at a different location on your local machine
 ```
+
 Info about our remote.
+
 ```bash
 git remote -v                    # Provides information about our remote
 git branch -a                    # Shows all branches (local and remote)
 ```
-Making edits to a remote repository.<br>
+
+Making edits to a remote repository.
+
 First, make changes to local repository, and commit.
+
 ```bash
 git diff                         # Show changes on current copy of code
 git status                       # Show the files that have been modified
 git add -A                       # Add all the files to staging area
 git commit -m "Commit It"        # Now commit the files on local
 ```
+
 Second, we pull any new changes that were pushed to the remote while we were working on our local copy, merge our changes, and push the updated files to our remote.
+
 ```bash
 git pull origin master           # Now we need to pull, in case someone else has made a change
 git push origin master           # Now we push to origin-name of remote repository and branch - master
 ```
+
 We have now successfully added our changes to the remote repository!
 
-### Branches
-Branches allow us to make speculative changes on potential features without affecting our master file.<br>
+## Branches
+
+Branches allow us to make speculative changes on potential features without affecting our master file.
+
 To create a branch, and begin working.
+
 ```bash
 git branch                       # List out current branches, and shows current branch by (*)
 git branch <branch_name>         # This creates a new branch
@@ -120,15 +140,21 @@ git branch                       # We can now see our new branch
 git checkout <branch_name>       # This moves us from our current branch to the branch we just created
 git branch                       # Now you can see we are on the new branch
 ```
-We make our speculative changes, and things look good.<br>
-First, we need to commit the changes we made to current branch (directions above). <br>
+
+We make our speculative changes, and things look good.
+
+First, we need to commit the changes we made to current branch (directions
+above).
+
 Then push our branch up to our remote.
+
 ```bash
 git push -u origin <branch_name> # Now we have associated our local branch and remote branches
 git branch -a                    # This will show our local and remote branches
 ```
 
 Once we have pushed, we can merge our branch into master if we wish.
+
 ```bash
 git checkout master              # Get to our local master branch
 git pull origin master           # Lets pull any new changes
@@ -143,6 +169,7 @@ git branch -a                    # Now we can see the branches are cleaned up!
 ```
 
 In certain rare cases, we may want to create an unrelated branch (i.e., an orphan branch)
+
 ```bash
 git checkout --orphan newbranch  # This moves you to a new empty branch
 git log                          # You will see there are no previous commits
@@ -155,8 +182,21 @@ git branch                       # Now you can see the new orphan branch
 git push -u origin <newbranch>   # Now we can push this new orphan branch up to our remote
 ```
 
-### Fixing Common Mistakes
+You may wish to track a branch created by one of your collaborators locally.
+
+```bash
+git pull                         # This will notify of 'origin/new_branch'
+git branch                       # Note that you still do not have a copy
+git checkout --track origin/new_branch  # This will allow you to track it
+git branch                       # Can see the branch has been added
+```
+
+## Fixing Common Mistakes
+
+### Fixes that do not effect the history
+
 Go back to previous commit.
+
 ```bash
 git status                       # Can see the files have changed
 git diff                         # Can see the changes
@@ -165,21 +205,36 @@ git status                       # Can see file has been rolled back
 git diff                         # Can see there are no changes in file
 ```
 
-__Note: these changes affect the history__<br>
-_Bad commit message._
+If collaborator has already pulled the file.
+
+```bash
+git log                          # See our commits, get hash
+git revert hash                  # Allows us to revert,
+git log                          # Now can see an additional commit undoing changes
+git diff hash1 hash2             # Let us see what git did to maintain history.
+```
+
+### Fixes that do affect the history
+
+Bad commit message.
+
 ```bash
 git log                               # Current log
 git commit --amend -m "New Message"   # Change commit message
 git log                               # New log, see changed message, but new hash!
 ```
-_Forgot to include file._
+
+Forgot to include file.
+
 ```bash
 git add <forgotten file>        # Place forgotten file in staging file
 git commit --amend              # Going to amend
 git log                         # See no new commit
 git log --stat                  # See files that were changed in commit
 ```
-_Making changes on master rather than feature branch that we had created but forgot_
+
+Making changes on master rather than feature branch
+
 ```bash
 git log                         # Lets get the hash of the commit we want to copy
 git checkout branch_name        # Go to the branch we were supposed to have committed to
@@ -196,7 +251,9 @@ git reset hash                  # Mixed (default). Commit gone, files still have
 git reset --hard hash           # Commit gone, tracked files set back to commit
 git clean -df                   # This cleans out all untracked (d for directories, f for files)
 ```
-_Ran ```git reset --hard``` by accident. There may be hope if its <30 days._
+
+Ran ```git reset --hard``` by accident. There may be hope if its <30 days.
+
 ```bash
 git reflog                      # This keeps track of all changes, might see hash
 git checkout hash               # This brings you back, but in a "detached head state" (i.e. not on a branch)
@@ -206,36 +263,34 @@ git branch                      # We can see our current branch and new branch
 git checkout master             # Go to master
 git branch                      # See all our branches, note that "detached head state" branch is gone
 ```
-__These will not modify or delete the history__<br>
-_People have already pulled the file._
-```bash
-git log                        # See our commits, get hash
-git revert hash                # Allows us to revert,
-git log                        # Now can see an additional commit undoing changes
-git diff hash1 hash2           # Let us see what git did to maintain history.
-```
 
-### Setting up SSH keys (Stop Git from asking for my password)
-Tired of typing your password?  ...   Set up an SSH key.
+## Setting up SSH keys (Stop Git from asking for my password)
+
+Tired of typing your password? ... Set up an SSH key.
 
 ```bash
 ls -al ~/.ssh                  # Check for existing SSH keys
 ```
 
 You may see some defaults, such as:
- * id_dsa.pub
- * id_ecdsa.pub
- * id_ed25519.pub
- * id_rsa.pub
+
+* id_dsa.pub
+* id_ecdsa.pub
+* id_ed25519.pub
+* id_rsa.pub
 
 You can either use one of these (if they exist) or _generate a new SSH key_
- ```bash
- ssh-keygen -t rsa -b 4096 -C "your_email@email.com"   # Generates a new key, using the provided email
- ```
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@email.com"   # Generates a new key, using the provided email
+```
+
 Enter a file in which to save the key
+
 Enter passphrase - A passphrase enables an additional level of security, if your system is compromised. You will need to enter this passphrase every time you work with Git.
 
-_Add the key to the ssh-agent_
+Add the key to the ssh-agent
+
 ```bash
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/<newkeyname>
@@ -244,6 +299,7 @@ ssh-add ~/.ssh/<newkeyname>
 Add key to GitHub account [follow this](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account).
 
 You may also need to _switch from HTTPS to SSH_ for this to work:
+
 ```bash
 git remote -v                                                    # This will show the current remotes (you will see HTTPS or SSH)
   # HTTPS look like: https://github.com/<USERNAME>/<REPO>.git
@@ -252,21 +308,27 @@ git remote set-url origin git@github.com:<USERNAME>/<REPO>.git   # You will get 
 git remote -v                                                    # Should see the updated remotes
 ```
 
-### Renaming a GitHub Repository
+## Renaming a GitHub Repository
+
 On github
-```
+
+```bash
 Your Repo > Settings > Repository name
 ```
+
 Links to the previous name of your repository will be forwarded to your new repository. However, for clarity its recommend that you update your links by:
+
 ```bash
 git remote set-url origin <newurl>
 ```
 
-### Commited a Large File by Accident
+## Commited a Large File by Accident
+
 If you accidentally committed a large file to your git history, but are now
 having an issue pushing your commit due to Github's maximum file size of 100MB.
 
 When you push you will see an error like this:
+
 ```bash
 remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
 remote: error: Trace: b310dac0473fe3f34910f9b68bd885fd
@@ -276,6 +338,7 @@ To github.com:username/repository.git
  ! [remote rejected] master -> master (pre-receive hook declined)
 error: failed to push some refs to git@github.com:username/repository.git
 ```
+
 Note that if you add this file to .gitignore and try committing this will not
 solve your problem as the issue is with your very first commit (the one before
 you realized you have that large file).
@@ -284,6 +347,7 @@ To fix this issue you need to not only .gitignore the large file, but also purge
 this file from your commit history so you can push your work and be up to update
 on your remote. You do this by going back in your tree and forcefully removing
 the file.
+
 ```bash
 git filter-branch --tree-filter 'rm -rf path/to/your/large/file' HEAD
 ```
@@ -295,3 +359,15 @@ filter and removal, like this:
 ```bash
 git filter-branch -f --tree-filter 'rm -rf path/to/your/other/large/file' HEAD
 ```
+
+## Sources
+
+[Git Tutorial from Code Academy](https://www.codecademy.com/learn/learn-git)
+
+[Git Tutorial for Beginners: Command-Line Fundementals](https://www.youtube.com/watch?v=HVsySz-h9r4&t=292s)
+
+[Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits](https://www.youtube.com/watch?v=FdZecVxzJbk&t=56s)
+
+[Why is Git always asking for my password?](https://help.github.com/en/articles/why-is-git-always-asking-for-my-password)
+
+[Committed a Large File by Accident?](https://thomas-cokelaer.info/blog/2018/02/git-how-to-remove-a-big-file-wrongly-committed/)
