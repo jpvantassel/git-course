@@ -164,7 +164,7 @@ git push origin master           # Push our changes to master
 git branch --merged              # List out the branches, we should see branch_name here
 git branch -d <branch_name>      # Remove the local branch
 git branch -a                    # We can see the local branch is gone, but the remote is still there
-git branch origin --delete <branch_name> # Now remove the remote branch
+git push origin --delete <branch_name> # Now remove the remote branch
 git branch -a                    # Now we can see the branches are cleaned up!
 ```
 
