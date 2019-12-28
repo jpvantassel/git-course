@@ -15,8 +15,8 @@
 
 Git offers two types of tags, _Lightweight_ and _Annotated_.
 
-_Lightweight:_ tags are the simplest and mark the commit with only the tag name.
-_Annotated:_ tags mark the commit and other additional information such as tagger, tag date, and tag message.
+- _Lightweight:_ tags are the simplest and mark the commit with only the tag name.
+- _Annotated:_ tags mark the commit and other additional information such as tagger, tag date, and tag message.
 
 ### Creating Lightweight Tags
 
