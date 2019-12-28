@@ -10,4 +10,5 @@
 - [Branches](./branches.md)
 - [Fixing Common Mistakes](./fixing_common_mistakes.md)
 - [Tags](./tags.md)
+- [Commit Emojis](./emojis.md)
 - [Setting Up SSH Keys](./setting_up_ssh_keys.md)
