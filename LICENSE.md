@@ -1,4 +1,6 @@
-Attribution-ShareAlike 4.0 International
+# Attribution-ShareAlike 4.0 International
+
+> Copyright (C) (2019) Joseph P. Vantassel
 
 =======================================================================
 
