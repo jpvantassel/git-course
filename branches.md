@@ -17,7 +17,7 @@ working copy.
   - [Automatic Merge Failed](#Automatic-Merge-Failed)
 - [Deleting a Branch](#Deleting-a-Branch)
 
-[Back](./README.md)
+Not what you were looking for? Return to [home](./README.md).
 
 ## Creating a Branch
 
@@ -154,3 +154,9 @@ git branch -a                            # After deleting local branch remote st
 git push origin --delete example         # Remove remote branch
 git branch -a                            # All done!
 ```
+
+## Sources
+
+[Git Tutorial from Code Academy](https://www.codecademy.com/learn/learn-git)
+
+[Git Tutorial for Beginners: Command-Line Fundementals](https://www.youtube.com/watch?v=HVsySz-h9r4&t=292s)
