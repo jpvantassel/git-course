@@ -2,12 +2,12 @@
 
 > Joseph P. Vantassel, The University of Texas at Austin
 
-[![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/Licence.md)
+[![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/LICENSE.md)
 
 To make commit messages easier to understand (particularly when being viewed
 through the github web interface) emojis can be appended to the front of the
-message to signify universally understood coding practices, so that the
-remainder of the message can focus on the commit details.
+message to signify universally understood coding practices, leaving the
+remainder of the message free for commit specific details.
 
 This set of commit emojis is adapted from work by
 [dannyfritz/commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji)
@@ -40,3 +40,5 @@ and [parmentf/GitCommitEmoji](https://gist.github.com/parmentf/035de27d6ed1dce0b
 | Breaking changes           | :boom:                       | `:boom:`                      |
 | Removing code/files        | :fire:                       | `:fire:`                      |
 | Move/rename files/repo     | :truck:                      | `:truck:`                     |
+
+Not what you were looking for? Return to [home](./README.md).
