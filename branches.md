@@ -1,75 +1,118 @@
-# Git Basics
+# Branches
 
 > Joseph P. Vantassel, The University of Texas at Austin
 
-[![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/Licence.md)
+[![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/LICENSE.md)
+
+Branches allow us to make speculative changes without affecting our master
+branch. This allows us to safely make breaking changes while maintaining a
+working copy.
 
 ## Table of Contents
 
 - [Creating a Branch](#Creating-a-Branch)
+  - [Create Local Copy of a Remote Branch](#Create-Local-Copy-of-a-Remote-Branch)
+  - [Create an Orphan Branch](#Create-an-Orphan-Branch)
 - [Merging a Branch](#Merging-a-Branch)
   - [Automatic Merge Failed](#Automatic-Merge-Failed)
-- [Orphan Branches](#Orphan-Branches)
+- [Deleting a Branch](#Deleting-a-Branch)
 
-## Branches
+[Back](./README.md)
 
-Branches allow us to make speculative changes without affecting our master file.
+## Creating a Branch
 
-### Creating a Branch
-
-To create a branch, and begin working.
+Create local branch.
 
 ```bash
-git branch                               # List out current branches, and shows current branch by (*)
-git branch <branch_name>                 # This creates a new branch
-git branch                               # We can now see our new branch
-git checkout <branch_name>               # This moves us from our current branch to the branch we just created
-git branch                               # Now you can see we are on the new branch
+git branch                               # List available branches and denotes current branch with *
+git branch example                       # Create new branch called example
+git branch                               # View our new branch
+git checkout example                     # Move from master to the example branch
+git branch                               # See that we are on our new branch
 ```
 
-We make our speculative changes, and things look good.
-
-First, we need to commit the changes we made to current branch (directions above).
-
-Then push our branch up to our remote.
+Make changes to local branch and commit.
 
 ```bash
-git push -u origin <branch_name>         # Now we have associated our local branch and remote branches
-git branch -a                            # This will show our local and remote branches
+echo "Add some text." > example.txt      # Make a change (e.g., create example file)
+git add example.txt                      # Add example file to staging area
+git commit -m ":sparkles: Add example"   # Commit file
 ```
 
-### Merging a Branch
-
-If we decide to keep our speculative change, we may want to merge our branch
-into master.
+Push our new local branch to remote.
 
 ```bash
-git checkout master                      # Get to our local master branch
-git pull origin master                   # Lets pull any new changes
-git branch --merged                      # List out the branches we have merged so far
-git merge <branch_name>                  # Merge in our branch -> If you get an error see section Automatic Merge Failed
+git branch -a                            # Baseline, note no remote branch
+git push -u origin remote_example        # Push new branch to a remote branch remote_example
+git branch -a                            # Note newly created remote branch
+```
+
+### Create Local Copy of a Remote Branch
+
+If you want to track a remote branch created by a collaborator, you must do so
+manually as git does not make local copies of all remote branches by default.
+
+Create local copy of a remote branch.
+
+```bash
+git pull                                 # This will notify of 'origin/new_branch'
+git branch                               # Note that you do not have a copy
+git checkout --track origin/new_branch   # This will allow you to track it
+git branch                               # Can see the branch has been added
+```
+
+### Create an Orphan Branch
+
+In certain rare cases, we may want to create an unrelated branch
+(i.e., an orphan branch).
+
+```bash
+git checkout --orphan newbranch          # Move to a new empty branch
+git log                                  # Note no previous commits
+git rm -rf .                             # Remove everything from the current directory
+echo "Do some work" > example.txt        # Do work (e.g., create new file)
+git add -A                               # Add new file(s) to staging area
+git commit -m ":tada: Initial Commit"    # Commit new files and establish history
+git log                                  # View history
+git branch                               # View new new orphan branch
+git push -u origin newbranch             # Push orphan branch to remote
+```
+
+## Merging a Branch
+
+If we decide we like our speculative changes we can merge it into our master
+branch.
+
+Merge branch into master.
+
+```bash
+git checkout master                      # Move to master branch
+git pull origin master                   # Pull any new changes
+git branch --merged                      # List out the branches we have merged to date
+git merge example                        # Merge in our branch -> If you get an error see section Automatic Merge Failed
 git push origin master                   # Push our changes to master
-git branch --merged                      # List out the branches, we should see branch_name here
-git branch -d <branch_name>              # Remove the local branch
-git branch -a                            # We can see the local branch is gone, but the remote is still there
-git push origin --delete <branch_name>   # Now remove the remote branch
-git branch -a                            # Now we can see the branches are cleaned up!
+git branch --merged                      # Note new newly merged branch has been added
 ```
 
-#### Automatic Merge Failed
+### Automatic Merge Failed
 
-If this occurs you will see the message:
-`Automatic merge failed; fix conflicts and then commit the result.`. Meaning
-that the merge cannot be resolved automatically by git and so requires your
-attention. First, see what files are affected with `git status`. Then, starting
-at the top of the list, open each file and resolve the conflict.
+A common error when merging branches is
+`Automatic merge failed; fix conflicts and then commit the result.`. This error
+indicates that merge could not be resolved automatically by git and so requires your
+attention.
 
-##### Example
+To resovlve the failed merge
+
+1. `git status` - To view what files were affected.
+2. Starting at the top move systematicaly through the list resolving conflicts (see [example](#Example))
+3. Commit the result of your manual merge.
+
+#### Example
 
 A possible issue may be in your `.gitignore` where you want to ignore a
 directory `dist` and `build`. Your master branch has them listed in one order
 and your dev branch has them listed in the reverse. When you open your
-`.gitignore` you will see something like this.
+`.gitignore` you will see.
 
 ```bash
 <<<<<<< HEAD
@@ -90,29 +133,24 @@ dist
 ```
 
 Save the file. And move onto the next conflict. Once you are done resolving
-all the conflicts commit the result as the earlier message instructed.
+all the conflicts commit the result.
 
-### Orphan Branches
+## Deleting a Branch
 
-In certain rare cases, we may want to create an unrelated branch (i.e., an orphan branch)
+After we merge our branch into master, we may wish to delete it.
+
+Delete local branch.
 
 ```bash
-git checkout --orphan newbranch          # This moves you to a new empty branch
-git log                                  # You will see there are no previous commits
-git rm -rf .                             # Remove everything from the current directory and remove from git
-# Do some work, so there is something to commit (e.g., touch README.md)
-git add -A                               # Add new file(s) to staging area
-git commit -m ":tada: Initial Commit"    # Commit new files and establish commit history
-git log                                  # Now you can see the history
-git branch                               # Now you can see the new orphan branch
-git push -u origin <newbranch>           # Now we can push this new orphan branch up to our remote
+git branch -a                            # After merging branch still exists
+git branch -d example                    # Remove the local branch example
+git branch -a                            # Local branch is gone, but the remote is still there
 ```
 
-You may wish to track a branch created by one of your collaborators locally.
+Delete remote branch.
 
 ```bash
-git pull                                 # This will notify of 'origin/new_branch'
-git branch                               # Note that you still do not have a copy
-git checkout --track origin/new_branch   # This will allow you to track it
-git branch                               # Can see the branch has been added
+git branch -a                            # After deleting local branch remote still exists
+git push origin --delete example         # Remove remote branch
+git branch -a                            # All done!
 ```
