@@ -47,6 +47,8 @@ git diff hash1 hash2             # See what git did to maintain history.
 git log                         # Current log
 git commit --amend -m "My Msg"  # Change commit message
 git log                         # New log, see changed message, but new hash!
+git pull                        # So git can resolve conflicts
+git push                        # Push up to the remote
 ```
 
 ### Forgot to Include File
