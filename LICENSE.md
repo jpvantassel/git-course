@@ -2,6 +2,9 @@
 
 > Copyright (C) (2019) Joseph P. Vantassel
 
+The `git` logo used as the favicon for this site was created by Jason Long, and
+used under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/)
+
 =======================================================================
 
 Creative Commons Corporation ("Creative Commons") is not a law firm and

@@ -4,29 +4,37 @@
 
 [![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/LICENSE.md)
 
-## Executive Summary
+## Overview
 
-This repository includes modules for learning the version control system Git.
-The modules, which are self contained tutorials on a particular topic,
-are accessible through the [table of contents](#Table-of-Contents) below. As
-these modules are intended as tutorials it is important to follow along with the
-examples to ensure you are understanding the material and to gain practice with
-the syntax. To get the most out of these modules begin by reviewing the modules
-in order from [Getting Started](./getting_started.md) to
-[Fixing Common Mistakes](./fixing_common_mistakes.md). These modules should give
-you a solid foundation upon which to build. If after
-following these tutorials you find yourself needing more information on a
-particular topic skip to the module pertaining to that topic and review it. If
-you do not see a module on the topic that you are looking for check
-back at a later date as this repository will be regularly updated.
+This site includes a collection of modules that attempt to cover the basics of
+the version control system `git`. Each module is a self-contained lesson on a
+particular topic. This site does not attempt to be exhaustive in its content,
+however in my experience the content presented covers about 90% of the
+situations you are likely to encounter. After completing these modules and
+learning the command-line syntax you can expect to be able to use `git` in your
+projects with intermediate proficiency.
 
-## Table of Contents
+All the best,
 
-- [Getting Started](./getting_started.md)
-- [Local Repositories](./local_repos.md)
-- [Remote Repositories](./remote_repos.md)
-- [Branches](./branches.md)
-- [Fixing Common Mistakes](./fixing_common_mistakes.md)
-- [Tags](./tags.md)
-- [Commit Emojis](./emojis.md)
-- [Setting Up SSH Keys](./setting_up_ssh_keys.md)
+\- Joe
+
+## How to Use this Site
+
+The site is composed of modules on various topics. Each module is self-contained
+and intended as tutorial, meaning it is important to follow along with the
+examples on your local machine to ensure you are understanding the
+material and to start building your command line proficiency.
+
+If you have never used `git` before, begin by reviewing the modules in order
+starting with [Getting Started](intro/getting_started.md) and ending with
+[Fixing Common Mistakes](intro/fixing_common_mistakes.md). These modules will
+provide you a solid foundation to understand the concepts behind version control
+and the `git` syntax.
+
+If you have used `git` before in the past or after you have completed the
+introductory modules and are looking for more information
+skip ahead to the modules you find the most interesting or the most useful,
+there is no need to complete these additional topics in any particular order.
+
+Finally, if you do not see any information on a topic that is of interest to
+you, feel free to request it.

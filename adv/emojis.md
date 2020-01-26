@@ -40,5 +40,3 @@ and [parmentf/GitCommitEmoji](https://gist.github.com/parmentf/035de27d6ed1dce0b
 | Breaking changes           | :boom:                       | `:boom:`                      |
 | Removing code/files        | :fire:                       | `:fire:`                      |
 | Move/rename files/repo     | :truck:                      | `:truck:`                     |
-
-Not what you were looking for? Return to [home](./README.md).

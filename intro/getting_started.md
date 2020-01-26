@@ -4,14 +4,6 @@
 
 [![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/LICENSE.md)
 
-## Table of Contents
-
-- [Installing Git](#Installing-git)
-- [Setup and Configuration](#Setup-and-Configuration)
-- [Getting Help](#Getting-Help)
-
-Not what you were looking for? Return to [home](./README.md).
-
 ## Installing Git
 
 Content forthcoming.

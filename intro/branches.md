@@ -8,17 +8,6 @@ Branches allow us to make speculative changes without affecting our master
 branch. This allows us to safely make breaking changes while maintaining a
 working copy.
 
-## Table of Contents
-
-- [Creating a Branch](#Creating-a-Branch)
-  - [Create Local Copy of a Remote Branch](#Create-Local-Copy-of-a-Remote-Branch)
-  - [Create an Orphan Branch](#Create-an-Orphan-Branch)
-- [Merging a Branch](#Merging-a-Branch)
-  - [Automatic Merge Failed](#Automatic-Merge-Failed)
-- [Deleting a Branch](#Deleting-a-Branch)
-
-Not what you were looking for? Return to [home](./README.md).
-
 ## Creating a Branch
 
 Create local branch.

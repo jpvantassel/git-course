@@ -4,16 +4,6 @@
 
 [![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/LICENSE.md)
 
-## Table of Contents
-
-- [Create a Local Repository](#Create-a-Local-Repository)
-- [Ignoring Files](#Ignoring-Files)
-- [Add File(s) to the Staging Area](#Add-File(s)-to-the-Staging-Area)
-- [Remove File(s) from the Staging Area](#Remove-File(s)-from-the-Staging-Area)
-- [Commit Staged Files](#Commit-Staged-Files)
-
-Not what you were looking for? Return to [home](./README.md).
-
 ## Create a Local Repository
 
 ```bash

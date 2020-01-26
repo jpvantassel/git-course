@@ -4,20 +4,6 @@
 
 [![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/LICENSE.md)
 
-## Table of Contents
-
-- [Fixes that do not affect history](#Fixes-that-do-not-affect-the-history)
-  - [Return to last commit](#Return-to-Last-Commit)
-- [Fixes that do affect history](#Fixes-that-do-affect-the-history)
-  - [Amend Bad Commit Message](#Amend-Bad-Commit-Message)
-  - [Forgot to Include File](#Forgot-to-Include-File)
-  - [Made Changes on Master by Mistake](#Made-Changes-On-Master-By-Mistake)
-  - [Accidental Hard Reset](#Accidental-Hard-Reset)
-- [Commited a Large File by Accident](#Commited-a-Large-File-by-Accident)
-- [Renaming a Remote Repository](#Renaming-a-Remote-Repository)
-
-Not what you were looking for? Return to [home](./README.md).
-
 ## Fixes that do not affect the history
 
 ### Return to Last Commit

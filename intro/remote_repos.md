@@ -4,14 +4,6 @@
 
 [![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/LICENSE.md)
 
-## Table of Contents
-
-- [Remote Repository from Local](#Remote-Repository-from-Local)
-- [Local Repository from Remote](#Local-Repository-from-Remote)
-- [Editing a Remote Repository](#Editing-a-Remote-Repository)
-
-Not what you were looking for? Return to [home](./README.md).
-
 ## Remote Repository from Local
 
 First, create a remote repository on [github](https://github.com/).

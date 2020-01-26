@@ -4,16 +4,6 @@
 
 [![License](https://img.shields.io/badge/license-CC--By--SA--4.0-brightgreen.svg)](https://github.com/jpvantassel/git-course/blob/master/Licence.md)
 
-## Table of Contents
-
-- [Introduction](#Introduction)
-- [Creating Lightweight Tags](#Creating-Lightweight-Tags)
-- [Creating Annotated Tags](#Creating-Annotated-Tags)
-- [Deleting a Tag](#Deleting-a-Tag)
-- [Forgot to Add a Tag](#Forgot-to-Add-a-Tag)
-
-Not what you were looking for? Return to [home](./README.md).
-
 ## Introduction
 
 Git offers two types of tags, _Lightweight_ and _Annotated_.

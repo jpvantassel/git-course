@@ -60,8 +60,6 @@ git remote set-url origin git@github.com:<USERNAME>/<REPO>.git   # If necessary,
 git remote -v                                                    # Note the updated remote
 ```
 
-Not what you were looking for? Return to [home](./README.md).
-
 ## Sources
 
 [Why is Git always asking for my password?](https://help.github.com/en/articles/why-is-git-always-asking-for-my-password)
