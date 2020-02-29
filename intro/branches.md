@@ -36,6 +36,29 @@ git push -u origin remote_example        # Push new branch to a remote branch re
 git branch -a                            # Note newly created remote branch
 ```
 
+### Renaming a Branch
+
+Rename the branch.
+
+```bash
+git branch -m new_name                   # Rename current branch to new_name
+# or
+git branch -m old_name new_name          # Rename branch old_name to new_name
+```
+
+Delete the old remote branch and replace with new branch.
+
+```bash
+git push origin :old_name new_name       # Replace remote branch old_name
+```
+
+Link newly renamed local and remote branches for future pushes.
+
+```bash
+git checkout new_name                    # Switch to newly renamed branch
+git push origin -u new_name              # Set branch to update new_name
+```
+
 ### Create Local Copy of a Remote Branch
 
 If you want to track a remote branch created by a collaborator, you must do so
@@ -63,7 +86,7 @@ echo "Do some work" > example.txt        # Do work (e.g., create new file)
 git add -A                               # Add new file(s) to staging area
 git commit -m ":tada: Initial Commit"    # Commit new files and establish history
 git log                                  # View history
-git branch                               # View new new orphan branch
+git branch                               # View new orphan branch
 git push -u origin newbranch             # Push orphan branch to remote
 ```
 
@@ -90,10 +113,10 @@ A common error when merging branches is
 indicates that merge could not be resolved automatically by git and so requires your
 attention.
 
-To resovlve the failed merge
+To resolve the failed merge
 
 1. `git status` - To view what files were affected.
-2. Starting at the top move systematicaly through the list resolving conflicts (see [example](#Example))
+2. Starting at the top move systematically through the list resolving conflicts (see [example](#Example))
 3. Commit the result of your manual merge.
 
 #### Example
@@ -149,3 +172,5 @@ git branch -a                            # All done!
 [Git Tutorial from Code Academy](https://www.codecademy.com/learn/learn-git)
 
 [Git Tutorial for Beginners: Command-Line Fundementals](https://www.youtube.com/watch?v=HVsySz-h9r4&t=292s)
+
+[Rename a Local and Remote Branch](https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git/)
