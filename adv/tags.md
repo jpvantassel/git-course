@@ -15,8 +15,8 @@ Git offers two types of tags, _Lightweight_ and _Annotated_.
 
 ```bash
 git tag -l                               # List out current tags
-git tag v0.1.0                           # Create lightweigth local tag
-git tag -l                               # List out out current tags -> note v0.1.0
+git tag v0.1.0                           # Create lightweight local tag
+git tag -l                               # List out current tags -> note v0.1.0
 git tag v0.1.0                           # View newly created tag specifically
 git push origin --tags                   # Push the tag up to the remote
 ```
@@ -26,7 +26,7 @@ git push origin --tags                   # Push the tag up to the remote
 ```bash
 git tag -l                               # List out current tags
 git tag -a v0.1.1 -m "Release v0.1.0"    # Create annotated tag
-git tag -l                               # List out out current tags -> note v0.1.1
+git tag -l                               # List out current tags -> note v0.1.1
 git tag v0.1.1                           # View new tag. Note additional info.
 git push origin --tags                   # Push the tag up to the remote
 ```
@@ -49,7 +49,7 @@ If you forgot to add a tag in the past and would like to add it retroactively.
 ```bash
 git tag -l                               # List out current tags
 git tag -a v0.2.1 -m "tag-msg" hash      # Create annotated tag, for an old commit
-git tag -l                               # List out out current tags -> note v0.1.1
+git tag -l                               # List out current tags -> note v0.1.1
 git push origin --tags                   # Push the tag up to the remote
 ```
 

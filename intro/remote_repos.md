@@ -12,7 +12,7 @@ _Note: If you have not used github before you will need to setup an account._
 
 Second, obtain the remote repository URL.
 
-Third, add remote repository URL to local repository and push commited changes.
+Third, add remote repository URL to local repository and push committed changes.
 
 ```bash
 git remote -v                                # Baseline

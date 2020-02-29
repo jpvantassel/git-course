@@ -65,23 +65,23 @@ git clean -df                   # This cleans out all untracked (d for directori
 
 ### Accidental Hard Reset
 
-There is some hope for this to be sucessful if the hard reset was done no
+There is some hope for this to be successful if the hard reset was done no
 longer than 30 days ago.
 
 ```bash
 git reflog                      # This keeps track of all changes, might see hash
 git checkout hash               # This brings you back, but in a "detached head state" (i.e. not on a branch)
 git log                         # Can now see the changes are back
-git branch branchname           # Add a branch to save that work, if we dont it will get deleted
+git branch branchname           # Add a branch to save that work, if we don't it will get deleted
 git branch                      # We can see our current branch and new branch
 git checkout master             # Go to master
 git branch                      # See all our branches, note that "detached head state" branch is gone
 ```
 
-## Commited a Large File by Accident
+## Committed a Large File by Accident
 
-You accidentally commited a large file to your local repo but are now
-having an issue pushing your commit due to Github's maximum file size of 100MB.
+You accidentally committed a large file to your local repo but are now
+having an issue pushing your commit due to GitHub's maximum file size of 100MB.
 
 When you push you will see an error like this:
 
@@ -109,7 +109,7 @@ git filter-branch --tree-filter 'rm -rf path/to/your/large/file' HEAD
 ```
 
 If you need to do this for more than one file, you will need to add a `-f`, to
-tell github to force overwrite the backup it made when you performed the
+tell GitHub to force overwrite the backup it made when you performed the
 previous filter and removal, like this.
 
 ```bash
@@ -118,7 +118,7 @@ git filter-branch -f --tree-filter 'rm -rf path/to/your/other/large/file' HEAD
 
 ## Renaming a Remote Repository
 
-On github
+On GitHub
 
 ```bash
 Your Repo > Settings > Repository name
