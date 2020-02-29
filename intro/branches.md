@@ -13,7 +13,7 @@ working copy.
 Create local branch.
 
 ```bash
-git branch                               # List available branches and denotes current branch with *
+git branch                               # List available branches
 git branch example                       # Create new branch called example
 git branch                               # View our new branch
 git checkout example                     # Move from master to the example branch
@@ -23,7 +23,7 @@ git branch                               # See that we are on our new branch
 Make changes to local branch and commit.
 
 ```bash
-echo "Add some text." > example.txt      # Make a change (e.g., create example file)
+echo "Add some text." > example.txt      # Make a change by creating file
 git add example.txt                      # Add example file to staging area
 git commit -m ":sparkles: Add example"   # Commit file
 ```
@@ -32,7 +32,7 @@ Push our new local branch to remote.
 
 ```bash
 git branch -a                            # Baseline, note no remote branch
-git push -u origin remote_example        # Push new branch to a remote branch remote_example
+git push -u origin remote_example        # Push branch to remote branch remote_example
 git branch -a                            # Note newly created remote branch
 ```
 
@@ -101,10 +101,14 @@ Merge branch into master.
 git checkout master                      # Move to master branch
 git pull origin master                   # Pull any new changes
 git branch --merged                      # List out the branches we have merged to date
-git merge example                        # Merge in our branch -> If you get an error see section Automatic Merge Failed
+git merge example                        # Merge in our branch, if error see note below
 git push origin master                   # Push our changes to master
 git branch --merged                      # Note new newly merged branch has been added
 ```
+
+_If you get an error when you try to merge your branch refer to section
+[Automatic Merge Failed](#Automatic-Merge-Failed) for information on how to
+resolve the problem._
 
 ### Automatic Merge Failed
 
@@ -156,15 +160,15 @@ Delete local branch.
 ```bash
 git branch -a                            # After merging branch still exists
 git branch -d example                    # Remove the local branch example
-git branch -a                            # Local branch is gone, but the remote is still there
+git branch -a                            # Local branch gone; remote still there
 ```
 
 Delete remote branch.
 
 ```bash
-git branch -a                            # After deleting local branch remote still exists
+git branch -a                            # Remote branch still exists
 git push origin --delete example         # Remove remote branch
-git branch -a                            # All done!
+git branch -a                            # All done, both local and remote removed
 ```
 
 ## Sources

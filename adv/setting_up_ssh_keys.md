@@ -27,7 +27,7 @@ this purpose) you can skip ahead.
 To generate a new key.
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your_email@email.com"   # Generates a new key, using the provided email
+ssh-keygen -t rsa -b 4096 -C "your_email@email.com"   # Generates a new key
 ```
 
 Enter a file in which to save the key.
@@ -52,12 +52,12 @@ You may also need to _switch from HTTPS to SSH_ for this to work, by doing the
 following.
 
 ```bash
-git remote -v                                                    # Baseline
+git remote -v                                                # Baseline
 # You will see HTTPS or SSH
-  # HTTPS looks like this https://github.com/<USERNAME>/<REPO>.git
-  # SSH looks like this git@github.com:<USERNAME>/<REPO>.git
-git remote set-url origin git@github.com:<USERNAME>/<REPO>.git   # If necessary, change from HTTPS to SSH
-git remote -v                                                    # Note the updated remote
+  # HTTPS looks like this https://github.com/<USER>/<REPO>.git
+  # SSH looks like this git@github.com:<USER>/<REPO>.git
+git remote set-url origin git@github.com:<USER>/<REPO>.git   # Switch to SSH
+git remote -v                                                # Note the change
 ```
 
 ## Sources

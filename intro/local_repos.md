@@ -7,11 +7,11 @@
 ## Create a Local Repository
 
 ```bash
-cd <myprojectdirectory>                # Move to project directory you want to track
-ls -la                                 # List all files, one per line in directory
-git init                               # Initialize git directory
-ls -la                                 # Note newly created .git directory!
-echo "Hello" > example.txt             # Create example file so directory is not empty
+cd <myprojectdirectory>                # Move to directory you want to track
+ls -la                                 # List all files, one per line
+git init                               # Initialize git repository
+ls -la                                 # Note newly created .git directory
+echo "Hello" > example.txt             # Create example file
 git status                             # Shows what is and is not being tracked
 ```
 
@@ -20,10 +20,10 @@ git status                             # Shows what is and is not being tracked
 To ignore a file add its name to a `.gitignore` file.
 
 ```bash
-git status                             # Shows state of the repo, note example.txt is not tracked
+git status                             # Shows state of the repo
 ls -la                                 # List files in directory
 echo "example.txt" > .gitignore        # This creates a .gitignore file for us
-ls -la                                 # List files in directory -> Note .gitignore file!
+ls -la                                 # List files in directory, note .gitignore
 git status                             # Note that example.txt no longer appears
 ```
 
@@ -38,7 +38,7 @@ git status                             # Current state of our directory
 git add <filename>                     # Add a single file to the staging area
 # OR -> To add all
 git add -A                             # Add everything that isn't "ignored"
-git status                             # Git shows us what changes are ready to be committed
+git status                             # Git shows us what is and is not staged
 ```
 
 ## Remove File(s) from the Staging Area
@@ -47,7 +47,7 @@ git status                             # Git shows us what changes are ready to 
 git status                             # Baseline
 git reset BadFile.py                   # Remove BadFile.py from the staging area
 # OR -> To remove all
-git reset                              # Remove all staged files from the staging area
+git reset                              # Resets all staged files
 git status                             # Confirm this worked
 ```
 
@@ -55,15 +55,15 @@ git status                             # Confirm this worked
 
 ```bash
 git status                             # Baseline
-git commit -m ":tada: Initial commit"  # Commit, -m is to give it a message, always do this!
+git commit -m ":tada: Initial commit"  # Commit, -m is to give it a message
 git status                             # Check our staging area
-git log                                # Now we can see our commit along with its message
+git log                                # Veiw commit along with its message
 ```
 
 _Note: The `:tada:` in the above commit message will render as an emoji on
 github. Developers use commit emojis to communicate what the commit was about,
 without using text. A listing of the commit emojis that I use in my projects is
-provided [here](./emojis.md)._
+provided [here](https://jpvantassel.github.io/git-course/#/adv/emojis)._
 
 ## Sources
 

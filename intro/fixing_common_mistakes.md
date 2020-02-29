@@ -48,19 +48,27 @@ git log --stat                  # See files that were changed in commit
 
 ### Made Changes on Master By Mistake
 
+First, copy the commit to the correct branch.
+
 ```bash
-git log                         # Lets get the hash of the commit we want to copy
-git checkout branch_name        # Go to the branch we were supposed to have committed to
+git log                         # Get hash for the bad commit
+git checkout branch_name        # Go to the right branch
 git log                         # Can see we don't have the commit
 git cherry-pick hashmaster      # Brings commit onto feature branch
 git log                         # See the copied commit
+```
 
+Second, remove the commit from the master branch. There are three ways of doing
+this they are a `soft`, `mixed`, and `hard` reset. You will typically only
+perform one of these three.
+
+```bash
 git checkout master             # Go back to the master branch
-git log                         # Get hash of the commit we want
-git reset --soft hash           # Commit is gone, files still has changed and are in staging area
-git reset hash                  # Mixed (default). Commit gone, files still have changes, but are not in staging area
-git reset --hard hash           # Commit gone, tracked files set back to commit
-git clean -df                   # This cleans out all untracked (d for directories, f for files)
+git log                         # Get hash of the bad commit
+git reset --soft hash           # Soft: Commit gone, files are changed, and staged
+git reset hash                  # Mixed: Commit gone, files are changed, but not staged
+git reset --hard hash           # Hard: Commit gone, file changes gone
+git clean -df                   # Remove all untracked (d for directories, f for files)
 ```
 
 ### Accidental Hard Reset
@@ -70,12 +78,13 @@ longer than 30 days ago.
 
 ```bash
 git reflog                      # This keeps track of all changes, might see hash
-git checkout hash               # This brings you back, but in a "detached head state" (i.e. not on a branch)
+git checkout hash               # If see the hash you can time-warp back,
+                                # but in a "detached head state" (not on a branch)
 git log                         # Can now see the changes are back
-git branch branchname           # Add a branch to save that work, if we don't it will get deleted
+git branch branchname           # Add a branch to save, if not it will be deleted
 git branch                      # We can see our current branch and new branch
 git checkout master             # Go to master
-git branch                      # See all our branches, note that "detached head state" branch is gone
+git branch                      # See all our branches, "detached head state" is gone
 ```
 
 ## Committed a Large File by Accident
@@ -86,10 +95,10 @@ having an issue pushing your commit due to GitHub's maximum file size of 100MB.
 When you push you will see an error like this:
 
 ```bash
-remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
-remote: error: Trace: b310dac0473fe3f34910f9b68bd885fd
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage
+remote: error: Trace: <hash>
 remote: error: See http://git.io/iEPt8g for more information.
-remote: error: File path/to/your/file is 427.54 MB; this exceeds GitHubs file size limit of 100.00 MB
+remote: error: File <path> is 400.60 MB; this exceeds GitHubs file size limit of 100.00 MB
 To github.com:username/repository.git
  ! [remote rejected] master -> master (pre-receive hook declined)
 error: failed to push some refs to git@github.com:username/repository.git
@@ -135,4 +144,4 @@ git remote set-url origin <newurl>
 
 [Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits](https://www.youtube.com/watch?v=FdZecVxzJbk&t=56s)
 
-[Committed a Large File by Accident?](https://thomas-cokelaer.info/blog/2018/02/git-how-to-remove-a-big-file-wrongly-committed/)
+[How to Remove a Big File Wrongly Commited](https://thomas-cokelaer.info/blog/2018/02/git-how-to-remove-a-big-file-wrongly-committed/)
