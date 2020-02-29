@@ -1,6 +1,6 @@
 # Attribution-ShareAlike 4.0 International
 
-> Copyright (C) (2019) Joseph P. Vantassel
+> Copyright (C) 2019-2020 Joseph P. Vantassel
 
 The `git` logo used as the favicon for this site was created by Jason Long, and
 used under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/)
