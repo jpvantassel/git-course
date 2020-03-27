@@ -21,7 +21,7 @@ and [parmentf/GitCommitEmoji](https://gist.github.com/parmentf/035de27d6ed1dce0b
 | Bugfix                     | :bug:                        | `:bug:`                       |
 | Documentation              | :books:                      | `:books:`                     |
 | Performance                | :racehorse:                  | `:racehorse:`                 |
-| Cosmetic                   | :lipstick:                   | `:lipstick:`                  |
+| Minor Changes              | :art:                        | `:art:`                       |
 | Tests                      | :rotating_light:             | `:rotating_light:`            |
 | Adding a test              | :white_check_mark:           | `:white_check_mark:`          |
 | Make a test pass           | :heavy_check_mark:           | `:heavy_check_mark:`          |
