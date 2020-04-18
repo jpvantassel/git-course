@@ -8,7 +8,7 @@ Starting to manage your projects with `git` can be overwhelming. Answering
 simple questions such as "How often should I commit?" and "How should I organize
 my repository?" can be difficult. This module seeks to provide
 guidance on `git` best practices for those just starting to find their way.
-A small but important caveat here. Each development team/organization/research
+A small but important caveat here: each development team/organization/research
 group will mostly like use `git` differently so while the rules provided
 here are generally considered good practice they will not apply in all
 situations. So with that in mind, I hope this module helps to answer some of
@@ -21,9 +21,9 @@ of capital letters and special characters.
 
 - Repositories should only contain source code or source-code-tangent
 information. Do not use `git` for storing analysis results, figures, or sample
-outputs. There are more appropriately store on a cloud storage system.
+outputs. They are more appropriately stored on a cloud storage system.
 
-- Repositories should contain a detailed `README.md` file which should contain:
+- Repositories should contain a detailed `README.md` file which should include the following:
   - A detailed description of the project
   - Installation/setup instructions
   - Links to detailed documentation
