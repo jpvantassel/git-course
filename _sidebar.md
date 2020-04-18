@@ -4,6 +4,7 @@
   * [Remote Repositories](intro/remote_repos.md)
   * [Branches](intro/branches.md)
   * [Fixing Common Mistakes](intro/fixing_common_mistakes.md)
+  * [Best Practices](intro/best_practices.md)
 
 * Advanced Topics
   * [Tags](adv/tags.md)
